@@ -16,16 +16,16 @@
                   <AnchorPane id="AnchorPane" prefHeight="180.0" prefWidth="430.0">
                      <children>
                         <Label id="userLabel" layoutX="14.0" layoutY="14.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Username" />
-                        <TextField id="usernameText" layoutX="14.0" layoutY="40.0" prefHeight="31.0" prefWidth="355.0" promptText="Enter Username" AnchorPane.leftAnchor="14.0" />
+                        <TextField id="usernameText" fx:id="enterUsername" layoutX="14.0" layoutY="40.0" onAction="#getLoginInfo" prefHeight="31.0" prefWidth="355.0" promptText="Enter Username" AnchorPane.leftAnchor="14.0" />
                         <Label layoutX="16.0" layoutY="82.0" style="-fx-font-size: 20; -fx-font-weight: bold;" text="Password" />
-                        <PasswordField id="passwordField" layoutX="14.0" layoutY="109.0" prefHeight="31.0" prefWidth="355.0" promptText="Enter Password" />
+                        <PasswordField id="passwordField" fx:id="enterPassword" layoutX="14.0" layoutY="109.0" onAction="#getLoginInfo" prefHeight="31.0" prefWidth="355.0" promptText="Enter Password" />
                      </children>
                   </AnchorPane>
                </children>
             </VBox>
          </children>
       </AnchorPane>
-      <Button id="loginButton" fx:id="login" layoutX="60.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="150.0" text="Login" />
+      <Button id="loginButton" fx:id="login" defaultButton="true" layoutX="60.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="150.0" text="Login" />
       <Button id="registerButton" fx:id="exit" layoutX="223.0" layoutY="345.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="50.0" prefWidth="150.0" text="Exit" />
    </children>
 </AnchorPane>

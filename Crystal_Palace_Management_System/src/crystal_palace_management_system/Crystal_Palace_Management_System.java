@@ -16,10 +16,10 @@ import javafx.stage.Stage;
  * @author Jason
  */
 public class Crystal_Palace_Management_System extends Application {
-    
+    public static HTMdatabase test = new HTMdatabase();
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -32,6 +32,12 @@ public class Crystal_Palace_Management_System extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+         //HTMdatabase test = new HTMdatabase();
+        //test.createTable();
+//       test.insertTable();
+      test.readAllDataBase();
+//       test.deleteRecord(9);
+//       test.readAllDataBase();
     }
     public void extendStay(){
         
