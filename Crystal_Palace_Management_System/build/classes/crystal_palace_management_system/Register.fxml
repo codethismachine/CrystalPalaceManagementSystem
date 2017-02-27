@@ -23,31 +23,33 @@
                   <AnchorPane prefHeight="401.0" prefWidth="606.0">
                      <children>
                         <Label alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="14.0" text="Register New Employee" />
-                        <Label layoutX="35.0" layoutY="55.0" text="First Name:" />
-                        <TextField layoutX="139.0" layoutY="48.0" prefHeight="31.0" prefWidth="191.0" />
-                        <Label layoutX="35.0" layoutY="122.0" text="Last Name:" />
-                        <TextField layoutX="139.0" layoutY="115.0" prefHeight="31.0" prefWidth="191.0" />
+                        <Label layoutX="32.0" layoutY="100.0" text="First Name:" />
+                        <TextField fx:id="newEmpFirstName" layoutX="140.0" layoutY="93.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Firstname" />
+                        <Label layoutX="32.0" layoutY="146.0" text="Last Name:" />
+                        <TextField fx:id="newEmpLastName" layoutX="140.0" layoutY="139.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Last Name" />
                         <Label layoutX="35.0" layoutY="193.0" text="Hire Date:" />
                         <HBox layoutX="139.0" layoutY="193.0" prefHeight="39.0" prefWidth="202.0">
                            <children>
-                              <TextField prefHeight="30.0" prefWidth="70.0" promptText="Year" />
-                              <TextField prefHeight="30.0" prefWidth="70.0" promptText="Month" />
-                              <TextField prefHeight="30.0" prefWidth="60.0" promptText="Day" />
+                              <TextField fx:id="newHireYear" prefHeight="30.0" prefWidth="70.0" promptText="Year" />
+                              <TextField fx:id="newHireMonth" prefHeight="30.0" prefWidth="70.0" promptText="Month" />
+                              <TextField fx:id="newHireDay" prefHeight="30.0" prefWidth="60.0" promptText="Day" />
                            </children>
                         </HBox>
                         <Label layoutX="35.0" layoutY="250.0" text="Department ID:" />
-                        <TextField layoutX="139.0" layoutY="243.0" prefHeight="30.0" prefWidth="200.0" />
+                        <TextField fx:id="newDeptID" layoutX="139.0" layoutY="243.0" prefHeight="30.0" prefWidth="200.0" promptText="Enter Department ID" />
                         <Label layoutX="35.0" layoutY="290.0" text="Username:" />
-                        <TextField layoutX="139.0" layoutY="282.0" prefHeight="30.0" prefWidth="200.0" />
+                        <TextField fx:id="newUsername" layoutX="139.0" layoutY="282.0" prefHeight="30.0" prefWidth="200.0" promptText="Enter Username" />
                         <Label layoutX="35.0" layoutY="342.0" text="Password:" />
-                        <PasswordField layoutX="139.0" layoutY="338.0" prefHeight="30.0" prefWidth="200.0" />
+                        <PasswordField fx:id="newPassword" layoutX="139.0" layoutY="338.0" prefHeight="30.0" prefWidth="200.0" promptText="Enter Password" />
+                        <Label layoutX="28.0" layoutY="54.0" text="Employee ID:" />
+                        <TextField fx:id="newEmpID" layoutX="140.0" layoutY="47.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter ID number" />
                      </children>
                   </AnchorPane>
                </children>
             </VBox>
          </children>
       </AnchorPane>
-      <Button fx:id="submitNewEmployee" layoutX="139.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="39.0" prefWidth="95.0" style="-fx-font-size: 15;" text="Submit" textOverrun="CLIP">
+      <Button fx:id="submitNewEmployee" layoutX="139.0" layoutY="400.0" mnemonicParsing="false" onAction="#handleRegisterNewEmployee" prefHeight="39.0" prefWidth="95.0" style="-fx-font-size: 15;" text="Submit" textOverrun="CLIP">
          <contextMenu>
             <ContextMenu>
               <items>
