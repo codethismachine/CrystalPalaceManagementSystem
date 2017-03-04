@@ -3,6 +3,7 @@
 <?import java.net.URL?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.PasswordField?>
@@ -12,9 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 
 <AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.MainController">
-    <stylesheets>
-        <URL value="@Register.css" />
-    </stylesheets>
+   
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
@@ -30,9 +29,7 @@
                         <Label layoutX="35.0" layoutY="193.0" text="Hire Date:" />
                         <HBox layoutX="139.0" layoutY="193.0" prefHeight="39.0" prefWidth="202.0">
                            <children>
-                              <TextField fx:id="newHireYear" prefHeight="30.0" prefWidth="70.0" promptText="Year" />
-                              <TextField fx:id="newHireMonth" prefHeight="30.0" prefWidth="70.0" promptText="Month" />
-                              <TextField fx:id="newHireDay" prefHeight="30.0" prefWidth="60.0" promptText="Day" />
+                              <DatePicker fx:id="regDate" onAction="#handleRegisterNewEmployee" prefHeight="31.0" prefWidth="191.0" />
                            </children>
                         </HBox>
                         <Label layoutX="35.0" layoutY="250.0" text="Department ID:" />
