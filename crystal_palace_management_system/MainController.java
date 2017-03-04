@@ -17,7 +17,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -27,8 +26,6 @@ import javafx.stage.Stage;
  * @author Jason
  */
 public class MainController implements Initializable {
-//    protected String username; 
-//    protected String password;
     @FXML
     private Button login;
     @FXML
@@ -44,6 +41,8 @@ public class MainController implements Initializable {
     @FXML
     private Button returnToMain;
     @FXML
+    private Button inventory;
+    @FXML
     private TextField enterUsername, newEmpID, newEmpFirstName, newEmpLastName, 
       newHireYear, newHireMonth, newHireDay, newDeptID, newUsername;
     @FXML 
@@ -52,8 +51,6 @@ public class MainController implements Initializable {
     private PasswordField enterPassword, newPassword; 
     @FXML 
     private Button clockOut;
-    @FXML
-    private Label subResultLabel = new Label();
     @FXML
     private Stage stage = null;
     @FXML
@@ -163,6 +160,20 @@ public class MainController implements Initializable {
      }     
         
     }
+    @FXML
+    private void handleInventory(ActionEvent event) throws IOException{
+         if(event.getSource()==inventory){
+             //get reference to the button's stage         
+        stage=(Stage) inventory.getScene().getWindow();
+        //load up OTHER FXML document
+        root = FXMLLoader.load(getClass().getResource("InventoryInsertItem.fxml"));
+         }
+         //create a new scene with root and set the stage
+      Scene scene = new Scene(root);  
+      stage.setScene(scene);
+      stage.show();
+      }
+    
     public void getLoginInfo(){
       if((enterUsername.getText() != null && !enterUsername.getText().isEmpty())&&
           (enterPassword.getText() != null && !enterPassword.getText().isEmpty())){
