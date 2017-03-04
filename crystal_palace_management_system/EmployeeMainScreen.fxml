@@ -29,7 +29,7 @@
                   <Button alignment="CENTER" minHeight="70.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="133.0" text="New Reservation" />
                   <Button minHeight="70.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="133.0" text="Reservations" GridPane.rowIndex="1" />
                   <Button alignment="CENTER" minHeight="70.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="133.0" text="Rooms" GridPane.columnIndex="1" />
-                  <Button minHeight="70.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="133.0" text="Inventory" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="inventory" minHeight="70.0" mnemonicParsing="false" onAction="#handleInventory" prefHeight="77.0" prefWidth="133.0" text="Inventory" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button alignment="CENTER" minHeight="70.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="133.0" text="Room Service" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                   <Button fx:id="register" alignment="CENTER" minHeight="70.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="77.0" prefWidth="133.0" text="Add New Employee " GridPane.columnIndex="3" />
                   <Button alignment="CENTER" minHeight="70.0" mnemonicParsing="false" prefHeight="77.0" prefWidth="133.0" text="Wak Up Calls" GridPane.rowIndex="3" />
