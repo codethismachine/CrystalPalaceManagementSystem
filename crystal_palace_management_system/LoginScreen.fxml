@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" styleClass="background" stylesheets="@Login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.MainController">
+<AnchorPane id="AnchorPane" prefHeight="500.0" prefWidth="500.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.MainController">
    <children>
       <AnchorPane id="ancherPane2" prefHeight="300.0" prefWidth="500.0" styleClass="top-segment">
          <children>
