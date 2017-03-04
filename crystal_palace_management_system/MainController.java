@@ -7,6 +7,7 @@ package crystal_palace_management_system;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -44,15 +46,22 @@ public class MainController implements Initializable {
     @FXML
     private TextField enterUsername, newEmpID, newEmpFirstName, newEmpLastName, 
       newHireYear, newHireMonth, newHireDay, newDeptID, newUsername;
+    @FXML 
+    private DatePicker regDate;
     @FXML
     private PasswordField enterPassword, newPassword; 
     @FXML 
     private Button clockOut;
-    
+    @FXML
+    private Label subResultLabel = new Label();
+    @FXML
+    private Stage stage = null;
+    @FXML
+    private Parent root = null;
     @FXML
  private void handleButtonAction(ActionEvent event) throws IOException{
-     Stage stage = null; 
-     Parent root = null;
+//     Stage stage = null; 
+//     Parent root = null;
     //getLoginInfo();
      if(event.getSource()==login){
          String username = enterUsername.getText();
@@ -110,30 +119,49 @@ public class MainController implements Initializable {
     }
     @FXML
     private void handleRegisterNewEmployee(ActionEvent event) throws IOException{
-        Stage stage = null; 
-        Parent root = null;
+//        Stage stage = null; 
+//        Parent root = null;
+        
       if(event.getSource() == submitNewEmployee){
           String tempID = newEmpID.getText();
           int empID = Integer.parseInt(tempID);
           String fName = newEmpFirstName.getText();
           String lName = newEmpLastName.getText();
-          int year = Integer.parseInt(newHireYear.getText());
-          int month = Integer.parseInt(newHireMonth.getText());
-          int day = Integer.parseInt(newHireDay.getText());
+//          int year = Integer.parseInt(newHireYear.getText());
+//          int month = Integer.parseInt(newHireMonth.getText());
+//          int day = Integer.parseInt(newHireDay.getText());
+            LocalDate date = regDate.getValue();
+            int year = date.getYear();
+            int month = date.getMonthValue();
+            int day = date.getDayOfMonth();
           int deptID = Integer.parseInt(newDeptID.getText());
           String username = newUsername.getText();
           String password = newPassword.getText();
-          Crystal_Palace_Management_System.test.insertNewEmployee(empID, fName, lName, year, month, day, deptID, username, password);
-        stage = (Stage) submitNewEmployee.getScene().getWindow();
-        root = FXMLLoader.load(getClass().getResource("SubmissionResult.fxml"));
-     }
-        
-        
-        
-      //create a new scene with root and set the stage
-      Scene scene = new Scene(root);
+          //Crystal_Palace_Management_System.test.insertNewEmployee(empID, fName, lName, year, month, day, deptID, username, password);
+//        stage = (Stage) submitNewEmployee.getScene().getWindow();
+//        root = FXMLLoader.load(getClass().getResource("SubmissionResult.fxml"));
+        if(Crystal_Palace_Management_System.test.insertNewEmployee(empID, fName, lName, year, month, day, deptID, username, password)){
+              System.out.println("Employee added successfully!");
+              stage = (Stage) submitNewEmployee.getScene().getWindow();
+              //root = FXMLLoader.load(getClass().getResource("SubmissionResult.fxml"));
+              final FXMLLoader tester = new FXMLLoader(getClass().getResource("SubmissionResult.fxml"));
+              tester.getNamespace().put("Test", "Employee added successfully!");
+              root = tester.load();
+          }else{
+              System.out.println("Employee ID already exists!");
+              stage = (Stage) submitNewEmployee.getScene().getWindow();
+             final FXMLLoader tester = new FXMLLoader(getClass().getResource("SubmissionResult.fxml"));
+              tester.getNamespace().put("Test", "Employee ID already exists!");
+              root = tester.load();
+          }
+    //create a new scene with root and set the stage
+      Scene scene = new Scene(root);  
       stage.setScene(scene);
       stage.show();
+    
+
+     }     
+        
     }
     public void getLoginInfo(){
       if((enterUsername.getText() != null && !enterUsername.getText().isEmpty())&&
