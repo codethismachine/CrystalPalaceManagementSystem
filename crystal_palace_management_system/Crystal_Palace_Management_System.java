@@ -16,7 +16,8 @@ import javafx.stage.Stage;
  * @author Jason
  */
 public class Crystal_Palace_Management_System extends Application {
-    public static HTMdatabase test = new HTMdatabase();
+    public static EmployeeDatabase test = new EmployeeDatabase();
+    public static InventoryDatabase invTable = new InventoryDatabase();
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("LoginScreen.fxml"));
