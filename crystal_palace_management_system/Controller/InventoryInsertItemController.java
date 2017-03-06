@@ -19,6 +19,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.sql.*;
+import java.util.function.UnaryOperator;
+import javafx.beans.property.StringProperty;
+import javafx.beans.value.ObservableValue;
+import javafx.scene.control.TextFormatter;
+import javafx.scene.control.TextFormatter.Change;
 
 /**
  * FXML Controller class
@@ -35,7 +40,6 @@ public class InventoryInsertItemController implements Initializable {
  private Stage stage = null;
  @FXML
  private Parent root = null;
-    
  @FXML
  private void handleButtonAction(ActionEvent event) throws IOException{
        if(event.getSource() == submitNewItem){
@@ -60,10 +64,12 @@ public class InventoryInsertItemController implements Initializable {
               tester.getNamespace().put("Test", "Item ID already exists!");
               root = tester.load();
           }
+        
     //create a new scene with root and set the stage
       Scene scene = new Scene(root);  
       stage.setScene(scene);
       stage.show();
+ 
      }else if(event.getSource() == cancelButton){
          stage = (Stage) submitNewItem.getScene().getWindow();
          final FXMLLoader tester = new FXMLLoader(getClass().getResource("/crystal_palace_management_system/View/EmployeeMainScreen.fxml"));
@@ -76,11 +82,26 @@ public class InventoryInsertItemController implements Initializable {
  }
     /**
      * Initializes the controller class.
+     * @param url
+     * @param rb
      */
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+     UnaryOperator<Change> filter = change -> {
+    String text = change.getText();
+
+    if (text.matches("[0-9]*")) {
+        return change;
+    }
+
+    return null;
+};
+TextFormatter<String> textFormatter = new TextFormatter<>(filter);
+TextFormatter<String> textFormatter2 = new TextFormatter<>(filter);
+newItemID.setTextFormatter(textFormatter);
+newItemQuantity.setTextFormatter(textFormatter2);
     }    
     
 }
