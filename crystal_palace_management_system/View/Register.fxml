@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="RegAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.Controller.RegisterController">
+   
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="737.0" prefWidth="1129.0">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="172.0" layoutY="14.0" text="Register New Employee" />
+                        <Label layoutX="26.0" layoutY="100.0" text="First Name:" />
+                        <TextField fx:id="newEmpFirstName" layoutX="140.0" layoutY="93.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Firstname" />
+                        <Label layoutX="32.0" layoutY="146.0" text="Last Name:" />
+                        <TextField fx:id="newEmpLastName" layoutX="140.0" layoutY="139.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Last Name" />
+                        <Label layoutX="511.0" layoutY="46.0" text="Start Date:" />
+                        <HBox layoutX="139.0" layoutY="193.0" prefHeight="39.0" prefWidth="202.0">
+                           <children>
+                              <TextField fx:id="newEmpMiddle" prefHeight="31.0" prefWidth="191.0" promptText="Enter Middle Name" />
+                           </children>
+                        </HBox>
+                        <Label layoutX="507.0" layoutY="346.0" text="Password:" />
+                        <PasswordField fx:id="newPassword" layoutX="605.0" layoutY="340.0" prefHeight="30.0" prefWidth="200.0" promptText="Enter Password" />
+                        <Label layoutX="28.0" layoutY="54.0" text="User ID:" />
+                        <TextField fx:id="newEmpID" layoutX="140.0" layoutY="47.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter ID number" />
+                        <Button fx:id="submitNewEmployee" layoutX="152.0" layoutY="674.0" mnemonicParsing="false" onAction="#handleRegisterNewEmployee" prefHeight="39.0" prefWidth="95.0" style="-fx-font-size: 15;" text="Submit" textOverrun="CLIP">
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </Button>
+                        <Button id="cancelButton" fx:id="cancelButton" layoutX="298.0" layoutY="674.0" mnemonicParsing="false" onAction="#handleCancelAction" prefHeight="39.0" prefWidth="95.0" style="-fx-font-size: 15;" text="Cancel" />
+                        <DatePicker fx:id="regDate" layoutX="609.0" layoutY="39.0" onAction="#handleRegisterNewEmployee" prefHeight="31.0" prefWidth="191.0" />
+                        <Label layoutX="31.0" layoutY="204.0" text="Middle Name:" />
+                        <Label layoutX="33.0" layoutY="249.0" text="Prefix:" />
+                        <Label layoutX="33.0" layoutY="294.0" text="Suffix:" />
+                        <Label layoutX="23.0" layoutY="337.0" text="Nickname:" />
+                        <Label layoutX="29.0" layoutY="457.0" text="JobTitle:" />
+                        <Label layoutX="26.0" layoutY="402.0" text="Address:" />
+                        <Label layoutX="20.0" layoutY="502.0" text="Phone Number:" />
+                        <Label layoutX="39.0" layoutY="553.0" text="SSN:" />
+                        <Label layoutX="20.0" layoutY="614.0" text="Date Of Birth:" />
+                        <Label layoutX="522.0" layoutY="196.0" text="Wage:" />
+                        <Label layoutX="522.0" layoutY="240.0" text="Salary:" />
+                        <Label layoutX="507.0" layoutY="294.0" text="Employee Type:" />
+                        <Label layoutX="519.0" layoutY="100.0" text="End Date:" />
+                        <DatePicker fx:id="endDate" layoutX="609.0" layoutY="93.0" onAction="#handleRegisterNewEmployee" prefHeight="31.0" prefWidth="191.0" />
+                        <Label layoutX="519.0" layoutY="147.0" text="Supervisor:" />
+                        <ChoiceBox fx:id="prefixChoice" layoutX="140.0" layoutY="245.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="suffixChoice" layoutX="140.0" layoutY="299.0" prefWidth="150.0" />
+                        <TextField fx:id="newEmpNickname" layoutX="140.0" layoutY="339.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Nickname Name" />
+                        <TextField fx:id="newEmpAddress" layoutX="140.0" layoutY="401.0" prefHeight="31.0" prefWidth="453.0" promptText="Enter Address" />
+                        <ChoiceBox fx:id="jobChoice" layoutX="140.0" layoutY="453.0" prefWidth="150.0" />
+                        <TextField fx:id="newEmpPhone" layoutX="133.0" layoutY="495.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Phone Number" />
+                        <TextField fx:id="newEmpSSN" layoutX="133.0" layoutY="546.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter SSN" />
+                        <DatePicker fx:id="DOB" layoutX="138.0" layoutY="609.0" onAction="#handleRegisterNewEmployee" prefHeight="31.0" prefWidth="191.0" />
+                        <TextField fx:id="newEmpWage" layoutX="614.0" layoutY="189.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Wage" />
+                        <TextField fx:id="newEmpSalary" layoutX="614.0" layoutY="234.0" prefHeight="31.0" prefWidth="191.0" promptText="Enter Salary" />
+                        <ChoiceBox fx:id="typeChoice" layoutX="609.0" layoutY="290.0" prefWidth="150.0" />
+                        <ChoiceBox fx:id="supervisorChoice" layoutX="609.0" layoutY="142.0" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
