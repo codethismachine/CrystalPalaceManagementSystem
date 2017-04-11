@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.Controller.AllEmployeesController">
+   <children>
+      
+      <Button fx:id="returnToMain" layoutX="658.0" layoutY="750.0" mnemonicParsing="false" onAction="#handleReturnToMain" prefHeight="39.0" prefWidth="95.0" text="ReturnToMain" />
+      <TableView fx:id="EmployeeView" layoutX="654.0" layoutY="-2.0" prefHeight="519.0" prefWidth="626.0" />
+      <Button fx:id="showEmployees" layoutX="81.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleShowEmployees" prefHeight="39.0" prefWidth="95.0" text="Search" />
+      <AnchorPane id="AnchorPane" layoutX="34.0" layoutY="136.0" prefHeight="243.0" prefWidth="428.0">
+         <children>
+            <TextField id="usernameText" fx:id="EmployeeLastName" layoutX="14.0" layoutY="40.0" prefHeight="31.0" prefWidth="355.0" promptText="Enter Employee Last Name" AnchorPane.leftAnchor="14.0" />
+            <TextField id="usernameText" fx:id="EmployeeFirstName" layoutX="15.0" layoutY="90.0" prefHeight="31.0" prefWidth="355.0" promptText="Enter Employee First Name" />
+            <TextField id="usernameText" fx:id="EmployeeNickname" layoutX="14.0" layoutY="138.0" prefHeight="31.0" prefWidth="355.0" promptText="Enter Nickname" />
+            <TextField id="usernameText" fx:id="EmployeeUsername" layoutX="14.0" layoutY="175.0" prefHeight="31.0" prefWidth="355.0" promptText="Enter Employee Username" />
+         </children>
+      </AnchorPane>
+      <Label layoutX="195.0" layoutY="100.0" text="Search For Employee" />
+      <Button fx:id="showAll" layoutX="238.0" layoutY="381.0" mnemonicParsing="false" onAction="#handleShowAllEmployees" prefHeight="39.0" prefWidth="95.0" text="Show All" />
+      <TextField fx:id="employeeUsername" layoutX="68.0" layoutY="517.0" promptText="Enter Username" />
+      <Label layoutX="58.0" layoutY="480.0" text="Enter Employee Username to Edit" />
+      <Button fx:id="Edit" layoutX="95.0" layoutY="562.0" mnemonicParsing="false" onAction="#handleEdit" prefHeight="39.0" prefWidth="95.0" text="Edit" />
+   </children>
+</AnchorPane>
