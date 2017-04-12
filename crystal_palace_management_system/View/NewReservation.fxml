@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="RegAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../Login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.Controller.NewReservationController">
+   
+   <children>
+      <AnchorPane prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox prefHeight="800.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <AnchorPane prefHeight="737.0" prefWidth="1129.0">
+                     <children>
+                        <Label id="titleLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="577.0" layoutY="21.0" text="New Reservation">
+                           <font>
+                              <Font name="System Bold" size="26.0" />
+                           </font></Label>
+                        <GridPane layoutX="794.0" layoutY="94.0" prefHeight="553.0" prefWidth="372.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label id="regLabel" text="Room Number:" />
+                              <TextField fx:id="RoomNumber" prefHeight="31.0" prefWidth="191.0" promptText="Enter Room Number" GridPane.columnIndex="1" />
+                              <Label id="regLabel" text="Note:" GridPane.rowIndex="1" />
+                              <TextField fx:id="NoteField" prefHeight="31.0" prefWidth="191.0" promptText="Enter Note" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <Label id="regLabel" text="Check In:" GridPane.rowIndex="4" />
+                              <HBox prefHeight="39.0" prefWidth="202.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                 <children>
+                                    <DatePicker fx:id="Start_Date" onAction="#handleNewReservation" prefHeight="31.0" prefWidth="191.0" />
+                                 </children>
+                              </HBox>
+                              <DatePicker fx:id="checkIn" onAction="#handleNewReservation" prefHeight="31.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label id="regLabel" text="Balance:" GridPane.rowIndex="6" />
+                              <Label id="regLabel" text="Cash:" GridPane.rowIndex="7" />
+                              <Label id="regLabel" text="Total Adults:" GridPane.rowIndex="8" />
+                              <Label id="regLabel" text="Start Date:" GridPane.rowIndex="2" />
+                              <Label id="regLabel" text="End Date:" GridPane.rowIndex="3" />
+                              <DatePicker fx:id="End_Date" onAction="#handleNewReservation" prefHeight="31.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <TextField fx:id="balance" prefHeight="31.0" prefWidth="176.0" promptText="Enter Balance" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="totalAdults" prefHeight="31.0" prefWidth="191.0" promptText="Enter Total Adults" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                              <Label id="regLabel" text="Check Out:" GridPane.rowIndex="5" />
+                              <DatePicker fx:id="checkOut" onAction="#handleNewReservation" prefHeight="31.0" prefWidth="191.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <CheckBox fx:id="cashCheckBox" mnemonicParsing="false" onAction="#handleNewReservation" text="Yes" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label id="regLabel" text="Total Children:" GridPane.rowIndex="9" />
+                              <TextField fx:id="totalChildren" prefHeight="31.0" prefWidth="191.0" promptText="Enter Total Children" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+                              <Label id="regLabel" text="Multiple Reservation " GridPane.rowIndex="10" />
+                              <TextField fx:id="multiReservation" prefHeight="31.0" prefWidth="191.0" promptText="Enter Multiple Reservation Number" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                           </children>
+                        </GridPane>
+                        <Button fx:id="submitNewReservation" layoutX="156.0" layoutY="694.0" mnemonicParsing="false" onAction="#handleNewReservation" prefHeight="39.0" prefWidth="95.0" style="-fx-font-size: 15;" text="Submit" textOverrun="CLIP">
+                           <contextMenu>
+                              <ContextMenu>
+                                <items>
+                                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </Button>
+                        <Button id="cancelButton" fx:id="cancelButton" layoutX="296.0" layoutY="694.0" mnemonicParsing="false" onAction="#handleCancelAction" prefHeight="39.0" prefWidth="95.0" style="-fx-font-size: 15;" text="Cancel" />
+                        <GridPane layoutX="39.0" layoutY="93.0" prefHeight="553.0" prefWidth="347.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label id="regLabel" text="*Phone Number:" />
+                              <Label id="regLabel" text="*First Name:" GridPane.rowIndex="1" />
+                              <Label id="regLabel" text="*Last Name:" GridPane.rowIndex="2" />
+                              <Label id="regLabel" text="Middle Name:" GridPane.rowIndex="3" />
+                              <Label id="regLabel" text="Nickname:" GridPane.rowIndex="6" />
+                              <Label id="regLabel" text="*Address:" GridPane.rowIndex="7" />
+                              <TextField fx:id="GuestPhone" prefHeight="31.0" prefWidth="191.0" promptText="Enter Phone Number" GridPane.columnIndex="1" />
+                              <TextField fx:id="GuestFirstName" prefHeight="31.0" prefWidth="191.0" promptText="Enter Guest First Name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="GuestLastName" prefHeight="31.0" prefWidth="191.0" promptText="Enter Guest Last Name" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <TextField fx:id="GuestMiddleName" prefHeight="31.0" prefWidth="191.0" promptText="Enter Guest Middle Name" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <ChoiceBox fx:id="GuestPrefix" minHeight="27.0" prefHeight="27.0" prefWidth="153.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <ChoiceBox fx:id="GuestSuffix" minHeight="27.0" prefHeight="27.0" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                              <TextField fx:id="GuestNickName" prefHeight="31.0" prefWidth="191.0" promptText="Enter Guest Nickname" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                              <TextField fx:id="GuestAddress" prefHeight="31.0" prefWidth="191.0" promptText="Enter Guest Address" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                              <Label id="regLabel" prefHeight="17.0" prefWidth="43.0" text="Prefix:" GridPane.rowIndex="4" />
+                              <Label id="regLabel" text="Suffix:" GridPane.rowIndex="5" />
+                           </children>
+                        </GridPane>
+                        <Label layoutX="42.0" layoutY="547.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

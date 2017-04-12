@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" styleClass="background" stylesheets="@../Login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.Controller.RoomViewController">
+   <children>
+      
+      <Button fx:id="returnToMain" layoutX="658.0" layoutY="750.0" mnemonicParsing="false" onAction="#handleReturnToMain" prefHeight="39.0" prefWidth="95.0" text="ReturnToMain" />
+      <TableView fx:id="RoomTable" prefHeight="537.0" prefWidth="1280.0" />
+      <Button fx:id="ShowRooms" layoutX="446.0" layoutY="750.0" mnemonicParsing="false" onAction="#handleShowRooms" prefHeight="39.0" prefWidth="120.0" text="Show Rooms" />
+   </children>
+</AnchorPane>
