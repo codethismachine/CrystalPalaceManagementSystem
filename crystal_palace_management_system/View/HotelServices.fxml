@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="background" stylesheets="@../Login.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="crystal_palace_management_system.Controller.HotelServicesController">
+   <children>
+      <Button fx:id="returnToMain" layoutX="400.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleReturnToMain" prefHeight="39.0" prefWidth="95.0" text="ReturnToMain" />
+      <TableView fx:id="ServicesView" layoutX="-2.0" layoutY="-3.0" prefHeight="401.0" prefWidth="800.0" />
+      <Button fx:id="showServices" layoutX="256.0" layoutY="495.0" mnemonicParsing="false" onAction="#handleShowServices" prefHeight="39.0" prefWidth="102.0" text="Show Services" />
+   </children>
+</AnchorPane>
